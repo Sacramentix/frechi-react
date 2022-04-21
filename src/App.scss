@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Mochiy Pop One", sans-serif;
+  font-size: 25px;
+}
+.result {
+  font-size: 1rem;
+  height: calc(100vh - 36ch);
+  min-height: 34ch;
+  display: flex;
+  overflow-y: auto;
+  flex-direction: column-reverse;
+  padding: 1ch 0;
+  gap: 1ch;
+  
+  
+}
+output {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  padding:  1ch;
+  gap: 1ch;
+  border-radius: 5px;
+  background: #222;
+  min-height: 10ch;
+  min-width: 35ch;
+  >p {
+    font-size: 1rem;
+    padding: 0;
+    background: #ccc;
+    color: #000;
+    height: 8ch;
+    width: 8ch;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 15px;
+    &:empty {
+      display: none;
+    }
+  }
+  button {
+    font-size: 2rem;
+    border: none;
+    border-radius: 15px;
+    display: grid;
+    justify-self: flex-end;
+    place-items: center;
+    background: none;
+    &.accept {
+      color: #0c0;
+      margin-left: auto;
+      ~ .delete {
+        margin-left: unset;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    &.delete {
+      color: #c00;
+      margin-left: auto;
+    }
+    
+  }
+}
+main {
+  background: #000;
+  color: #ccc;
+  position: absolute;
+  inset: 0;
+  overflow: auto;
+  display: flex;
+  min-height: 100%;
+  padding: 5px;
+  gap: 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  > section {
+    > div {
+      font-size: 1rem;
+      display: flex;
+      max-width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+      min-height: 10ch;
+      padding: 1ch;
+      gap: 15px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.math-button {
+    font-size: 1rem;
+    border: none;
+    height: 8ch;
+    width: 8ch;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    &:hover {
+        transform: scale(1.025);
+    }
+    &:active {
+        transform: scale(.975);
+    }
+    &:disabled {
+        filter: brightness(.8);
+    }
+}
