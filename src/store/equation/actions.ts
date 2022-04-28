@@ -26,25 +26,31 @@ export function getSeries(n=5) {
 export const mathSymbols = [MathSymbol.Plus, MathSymbol.Minus, MathSymbol.Multiply, MathSymbol.Divide];
 
 export function getRandomResult(series:number[]) {
-  if (series.length < 1) return 0;
+  var equation = "";
+  series.forEach(_ => equation += "( ");
+  if (series.length < 1) return { result: 0, equation: "0"};
   const copy = shuffle(series.slice());
   var result = copy.pop()!;
+  equation += result;
   while (copy.length != 0) {
     const symbols = mathSymbols.slice();
     const n = copy.pop()!;
     if (n>=result) symbols.splice(1,1);
     if (result % n != 0) symbols.pop();
-    result = solve(result, symbols[randomInt(0,symbols.length)],n);
+    const symbol = symbols[randomInt(0,symbols.length)];
+    equation += ` ${symbol} ${n} ) `;
+    result = solve(result, symbol, n);
   }
-  return result;
+  return {result, equation};
 }
 
 export function getSeriesAndResult(n?:number) {
   const series = getSeries(n);
-  const result = getRandomResult(series);
+  const {result, equation} = getRandomResult(series);
   return {
     series,
-    result
+    result,
+    equation
   }
 }
 

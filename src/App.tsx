@@ -1,4 +1,4 @@
-import { useContext,   } from 'react'
+import { useContext, useState } from 'react'
 import './App.scss'
 import { MathButton } from './components/MathButton';
 import WinOverlay from './components/WinOverlay';
@@ -7,6 +7,7 @@ import { AppContext, AppContextType } from './store/game';
 
 function App() {
   const context = useContext(AppContext) as AppContextType;
+  const [showSolution, setShowSolution] = useState(false);
   
   const {
     submitResult,
@@ -20,7 +21,8 @@ function App() {
     resultToFind,
     numbers,
     calculteds,
-    hasWin
+    hasWin,
+    solution
   } = context;
 
   const getEquations = equations.slice().reverse();
@@ -29,8 +31,12 @@ function App() {
 
   return (<>
     <main>
-      <h1>Frechi</h1>
-      <h2>{ resultToFind }</h2>
+      <div className='head'> 
+        <h1>Frechi</h1>
+        {showSolution && <p>{ solution+" = " }</p>}
+        <h2>{ resultToFind }</h2>
+        <button onClick={() => setShowSolution(true)}>Afficher la solution</button>
+      </div>
       <div className="result">
       {
         getEquations.map((equation, i) =>

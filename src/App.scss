@@ -7,6 +7,27 @@ body {
   font-family: "Mochiy Pop One", sans-serif;
   font-size: 25px;
 }
+
+.head {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+  button {
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    color: #000;
+    font-weight: bold;
+    &:hover {
+      transform: scale(1.025);
+    } 
+    &:active {
+        transform: scale(.975);
+    }
+  }
+}
+
 .result {
   font-size: 1rem;
   height: calc(100vh - 36ch);
