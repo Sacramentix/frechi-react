@@ -1,32 +1,33 @@
-import { useContext, useEffect,  } from 'react'
+import { useContext,   } from 'react'
 import './App.scss'
 import { MathButton } from './components/MathButton';
+import WinOverlay from './components/WinOverlay';
 import { mathSymbols } from './store/equation/actions';
-import { AppContext, AppContextType, GlobalProvider } from './store/game';
+import { AppContext, AppContextType } from './store/game';
 
 function App() {
   const context = useContext(AppContext) as AppContextType;
   
-  const { store, actions } = context;
   const {
     submitResult,
     deleteEquation,
     n,
     onNumberClick,
     onSymbolClick
-  } = actions;
+  } = context.actions;
   var {
     equations,
     resultToFind,
     numbers,
-    calculteds
-  } = store;
+    calculteds,
+    hasWin
+  } = context;
 
   const getEquations = equations.slice().reverse();
   const sortedNumbers = numbers.sort((a,b)=>a-b);
   const sortedCalculteds = calculteds.sort((a,b)=>a-b);
 
-  return (
+  return (<>
     <main>
       <h1>Frechi</h1>
       <h2>{ resultToFind }</h2>
@@ -41,7 +42,7 @@ function App() {
           {i == 0 && equation.result != null &&
             <button className="accept" onClick={()=>submitResult(context)}>✔</button>
           }
-          {i == 0 && ( getEquations.length > 1 || Object.keys(equation).length != 0) != null &&
+          {i == 0 && ( getEquations.length > 1 || Object.keys(equation).length != 0) &&
             <button className="delete" onClick={()=>deleteEquation(context)}>X</button>
           }   
         </output>
@@ -61,7 +62,10 @@ function App() {
       </div>
     </section>
   </main>
-  )
+  { hasWin &&
+    <WinOverlay/>
+  }
+  </>)
 }
 
 export default App;
