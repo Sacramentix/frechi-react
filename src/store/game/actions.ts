@@ -9,6 +9,13 @@ export function reset(context:AppContextType) {
     context.equations = [{}];
     context.calculteds = [];
     context.numbers = series;
+    context.showSolution = false;
+    const {actions, setStore, ...store} = context;
+    context.setStore({...store});
+}
+
+export function setShowSolution(context:AppContextType, b:boolean) {
+    context.showSolution = b;
     const {actions, setStore, ...store} = context;
     context.setStore({...store});
 }

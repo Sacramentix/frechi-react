@@ -13,6 +13,9 @@ body {
   justify-content: center;
   gap: 15px;
   align-items: center;
+  img {
+    filter: drop-shadow(0 0 5px);
+  }
   button {
     border: none;
     border-radius: 15px;

@@ -14,3 +14,5 @@ export const calculteds:number[] = [];
 export const numbers = series;
 
 export const solution = equation;
+
+export const showSolution = false;

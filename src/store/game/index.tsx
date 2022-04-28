@@ -1,6 +1,6 @@
 import { createContext, useMemo, useState } from "react";
-import { reset, onNumberClick, onSymbolClick, submitResult, deleteEquation, removeFrom, n, solveEquation } from "./actions";
-import { series, resultToFind, hasWin, equations, calculteds, numbers, solution } from "./state";
+import { reset, onNumberClick, onSymbolClick, submitResult, deleteEquation, removeFrom, n, solveEquation, setShowSolution } from "./actions";
+import { series, resultToFind, hasWin, equations, calculteds, numbers, solution, showSolution } from "./state";
 
 export const contextState = {
     series,
@@ -9,7 +9,8 @@ export const contextState = {
     equations,
     calculteds,
     numbers,
-    solution
+    solution,
+    showSolution
 }
 
 export type ContextStateType = typeof contextState;
@@ -23,6 +24,7 @@ export const contextActions = {
     removeFrom,
     n,
     solveEquation,
+    setShowSolution
 }
 
 export type AppContextType = typeof contextState & {

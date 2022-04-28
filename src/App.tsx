@@ -4,17 +4,18 @@ import { MathButton } from './components/MathButton';
 import WinOverlay from './components/WinOverlay';
 import { mathSymbols } from './store/equation/actions';
 import { AppContext, AppContextType } from './store/game';
+import logoUrl from "../public/frechi.svg"
 
 function App() {
   const context = useContext(AppContext) as AppContextType;
-  const [showSolution, setShowSolution] = useState(false);
   
   const {
     submitResult,
     deleteEquation,
     n,
     onNumberClick,
-    onSymbolClick
+    onSymbolClick,
+    setShowSolution
   } = context.actions;
   var {
     equations,
@@ -22,7 +23,8 @@ function App() {
     numbers,
     calculteds,
     hasWin,
-    solution
+    solution,
+    showSolution
   } = context;
 
   const getEquations = equations.slice().reverse();
@@ -32,18 +34,20 @@ function App() {
   return (<>
     <main>
       <div className='head'> 
-        <h1>Frechi</h1>
+        <img src={ logoUrl }/>
         {showSolution && <p>{ solution+" = " }</p>}
         <h2>{ resultToFind }</h2>
-        <button onClick={() => setShowSolution(true)}>Afficher la solution</button>
+        <button onClick={() => setShowSolution(context, true)}>Afficher la solution</button>
       </div>
       <div className="result">
       {
         getEquations.map((equation, i) =>
           <output key={i}>
-          <p>{ n(equation.entry1) }</p>
+          { /*Giga tricks sheitanique*/ }
+          <p>{ n(+equation.entry1?.toFixed(2)! || undefined) }</p>
           { n(equation.symbol) }
-          <p>{ n(equation.entry2) }</p>
+          { /*Giga tricks sheitanique, 2ème acte pour ceux qui n'ont pas vu*/ }
+          <p>{ n(+equation.entry2?.toFixed(2)! || undefined) }</p>
           { equation.result != null ? "= " + equation.result : "" }
           {i == 0 && equation.result != null &&
             <button className="accept" onClick={()=>submitResult(context)}>✔</button>
@@ -58,7 +62,7 @@ function App() {
     </div>
     <section>
       <div>
-        { sortedCalculteds.map((c,i)=><MathButton key={i} value={c+''} onClick={()=>onNumberClick(context, c, calculteds)} />) }
+        { sortedCalculteds.map((c,i)=><MathButton key={i} value={+ c.toFixed(2)+''} onClick={()=>onNumberClick(context, c, calculteds)} />) }
       </div>
       <div>
         { sortedNumbers.map((n,i)=><MathButton key={i} value={n+''} onClick={()=>onNumberClick(context, n, numbers)} />) }
