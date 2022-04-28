@@ -1,0 +1,24 @@
+.win-overlay {
+    position: fixed;
+    inset: 0;
+    background: #0003;
+    display: grid;
+    place-items: center;
+    section {
+        background: #222;
+        color: #ccc;
+        padding: 25px;
+        border-radius: 15px;
+        display: grid;
+        place-items: center;
+        gap: 25px;
+
+    }
+    button {
+        border: none;
+        border-radius: 15px;
+        padding: 15px;
+        background: #ccc;
+        color: #000;
+    }
+}
