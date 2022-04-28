@@ -24,8 +24,7 @@ export const contextActions = {
     solveEquation,
 }
 
-export type AppContextType = {
-    store: typeof contextState,
+export type AppContextType = typeof contextState & {
     setStore: React.Dispatch<React.SetStateAction<typeof contextState>>
     actions: typeof contextActions 
 }
@@ -37,9 +36,5 @@ export const { Provider, Consumer } = AppContext;
 export const GlobalProvider: React.FC<{children: React.ReactNode}> = ({children}) => {
   const [store, setStore] = useState(contextState);
   const [ actions, setActions ] = useState(contextActions);
-  return <AppContext.Provider value={useMemo(() => ({ store, setStore, actions }), [
-    store,
-    setStore,
-    actions
-  ])}>{children}</AppContext.Provider>;
+  return <AppContext.Provider value={{...store, setStore, actions}}>{children}</AppContext.Provider>;
 };
