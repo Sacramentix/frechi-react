@@ -5,6 +5,8 @@ import WinOverlay from './components/WinOverlay';
 import { mathSymbols } from './store/equation/actions';
 import { AppContext, AppContextType } from './store/game';
 import logoUrl from "../public/frechi.svg"
+import acceptUrl from "./assets/accept.svg"
+import deleteUrl from "./assets/delete.svg"
 
 function App() {
   const context = useContext(AppContext) as AppContextType;
@@ -33,8 +35,10 @@ function App() {
 
   return (<>
     <main>
-      <div className='head'> 
-        <img src={ logoUrl }/>
+      <div className='head'>
+        { /* Cette pantoufle ne reconnait pas 'role' comme attribut de 'img' */ }
+        {/*@ts-ignore*/}
+        <img src={ logoUrl } role="heading" aria-level="1" title="frechi"/>
         {showSolution && <p>{ solution+" = " }</p>}
         <h2>{ resultToFind }</h2>
         <button onClick={() => setShowSolution(context, true)}>Afficher la solution</button>
@@ -50,10 +54,10 @@ function App() {
           <p>{ n(+equation.entry2?.toFixed(2)! || undefined) }</p>
           { equation.result != null ? "= " + equation.result : "" }
           {i == 0 && equation.result != null &&
-            <button className="accept" onClick={()=>submitResult(context)}>✔</button>
+            <button className="accept" onClick={()=>submitResult(context)}><img src={ acceptUrl }/></button>
           }
           {i == 0 && ( getEquations.length > 1 || Object.keys(equation).length != 0) &&
-            <button className="delete" onClick={()=>deleteEquation(context)}>X</button>
+            <button className="delete" onClick={()=>deleteEquation(context)}><img src={ deleteUrl }/></button>
           }   
         </output>
         )

@@ -53,6 +53,9 @@ output {
   background: #222;
   min-height: 10ch;
   min-width: 35ch;
+  img {
+    width: 2ch;
+  }
   >p {
     font-size: 1rem;
     padding: 0;
