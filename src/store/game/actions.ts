@@ -89,7 +89,9 @@ export function removeFrom(a:number[], n:number):number {
 }
 
 export function n(n?:number | string) {
-    return n != null ? n : ""
+    return n == null ? "" :
+            typeof n === "number" ? +n.toFixed(2)! :
+            n;
 }
 
 export function solveEquation(context:AppContextType, e:Complete<Equation>) {
