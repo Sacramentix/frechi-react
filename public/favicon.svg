@@ -1,0 +1,8 @@
+<svg width="500" height="500" version="1.1" viewBox="0 0 132.3 132.3" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(-32.48 -90.67)">
+  <g transform="matrix(1.074 0 0 1.074 -2.41 -6.728)">
+   <circle cx="94.06" cy="152.2" r="61.58" stroke-linecap="round" stroke-linejoin="round" stroke-width=".05292"/>
+   <text x="38.867905" y="187.4182" fill="#f7f7f7" font-family="sans-serif" font-size="110.4px" stroke-width="2.76" style="line-height:1.25" xml:space="preserve"><tspan x="38.867905" y="187.4182" fill="#f7f7f7" stroke-width="2.76">∞</tspan></text>
+  </g>
+ </g>
+</svg>
