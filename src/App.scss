@@ -11,10 +11,16 @@ body {
 .head {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+  padding: 15px 0;
   gap: 15px;
   align-items: center;
   img {
     filter: drop-shadow(0 0 5px);
+  }
+  p {
+    flex-shrink: 0;
   }
   button {
     border: none;
