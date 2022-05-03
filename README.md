@@ -16,7 +16,7 @@ Frechi is an offline web game based on the concept of french TV game show *<a hr
 <p align="center">
   <a href="https://vitejs.dev" title="Vite"><img width=32 height=32 src="https://vitejs.dev/logo.svg" alt="Vite logo"></a>
 	<a href="https://www.typescriptlang.org" title="Typescript"><img width=32 height=32 src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="Typescript logo"></a> 
- 
+ 	<a href="https://reactjs.org" title="React"><img width=32 height=28 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/220px-React-icon.svg.png" alt="React logo"></a> 
 </p>
 
 ## 🏗️ How to setup the project
