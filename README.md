@@ -4,6 +4,12 @@ Frechi is an offline web game based on the concept of french TV game show *<a hr
 
 ## 🏔️ Lighthouse insight
 
+<p align="center">
+	<a href="https://htmlpreview.github.io/?https://github.com/Sacramentix/frechi-react/blob/master/.github/lighthouse_results/mobile/frechi_react_netlify_app.html" title="Click to see full detail">
+		<img src=".github/lighthouse_results/mobile/pagespeed.svg">
+	</a>
+ 
+</p>
 
 ## 🚀 Tech stack
 
