@@ -2,13 +2,12 @@
 
 # Avez vous deja vus la fameuse émission des chiffres et des lettres ?
 
-## la regarder vous encore régulierement ?
+# La regardez-vous régulierement ?
 
-# aimer vous le compte est bon ?
+# Aimez vous le compte est bon ?
 
-# êtes vous adepte de jeux mobile hors ligne ?
+# Êtes vous un adepte des jeux mobile hors-ligne ?
 
 # Seriez vous intéressé par un jeu web le compte est bon ?
 
-# pensez vous qu'il serait bon d'éduquer la jeunesse avec ce jeu ?
-
+# Pensez vous qu'il serait bon d'éduquer la jeunesse avec ce jeu ?
