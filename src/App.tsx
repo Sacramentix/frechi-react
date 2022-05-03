@@ -38,7 +38,7 @@ function App() {
       <div className='head'>
         { /* Cette pantoufle ne reconnait pas 'role' comme attribut de 'img' */ }
         {/*@ts-ignore*/}
-        <img src={ logoUrl } width="1230" height="393" role="heading" aria-level="1" title="frechi"/>
+        <img src={ logoUrl } width="410" height="131" role="heading" aria-level="1" title="frechi"/>
         {showSolution && <p>{ solution+" = " }</p>}
         <h2>{ resultToFind }</h2>
         <button onClick={() => setShowSolution(context, true)}>Afficher la solution</button>
