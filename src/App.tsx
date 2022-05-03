@@ -4,7 +4,7 @@ import { MathButton } from './components/MathButton';
 import WinOverlay from './components/WinOverlay';
 import { mathSymbols } from './store/equation/actions';
 import { AppContext, AppContextType } from './store/game';
-import logoUrl from "../public/frechi.svg"
+import logoUrl from "./assets/frechi.svg"
 import acceptUrl from "./assets/accept.svg"
 import deleteUrl from "./assets/delete.svg"
 
