@@ -3,12 +3,13 @@ import type { AppContextType } from "./index";
 import type { Complete, Equation, MathSymbol } from "./type";
 
 export function reset(context:AppContextType) {
-    const { series, result } = getSeriesAndResult(5);
+    const { series, result, equation } = getSeriesAndResult(5);
     context.resultToFind = result;
     context.hasWin = false;
     context.equations = [{}];
     context.calculteds = [];
     context.numbers = series;
+    context.solution = equation;
     context.showSolution = false;
     const {actions, setStore, ...store} = context;
     context.setStore({...store});
