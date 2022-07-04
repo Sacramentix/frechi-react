@@ -1,5 +1,7 @@
 # Frechi React
-
+<p align="center">
+	<a href="https://frechi-react.netlify.app/" target="_blank">Play now!</a>
+</p>
 Frechi is an offline web game based on the concept of french TV game show *<a href="https://en.wikipedia.org/wiki/Des_chiffres_et_des_lettres">Des chiffres et des lettres</a>*
 
 ## 🏔️ Lighthouse insight
